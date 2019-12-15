@@ -12,9 +12,9 @@ name: OpenWrt
 on:
   schedule:
     - cron: 0 20 * * *
-  # push:
-  #   branches: 
-  #     - master
+  push:
+    branches: 
+      - master
 
 jobs:
   build:
@@ -173,6 +173,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-wireguard=y
           CONFIG_PACKAGE_luci-app-wrtbwmon=y
           CONFIG_PACKAGE_luci-app-koolproxyR=y
+          CONFIG_PACKAGE_luci-app-softethervpn=y
           EOF
 
           # LuCI主题:
