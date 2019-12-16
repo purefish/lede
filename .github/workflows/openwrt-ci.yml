@@ -12,9 +12,9 @@ name: OpenWrt
 on:
   schedule:
     - cron: 0 20 * * *
-  push:
-    branches: 
-      - master
+  # push:
+  #   branches: 
+  #     - master
 
 jobs:
   build:
@@ -60,7 +60,6 @@ jobs:
           mkdir openwrt-packages
           cd openwrt-packages
           git clone https://github.com/Ameykyl/luci-app-koolproxyR.git
-          git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
           git clone https://github.com/rosywrt/luci-theme-rosy.git
 
       - name: Update feeds
@@ -178,10 +177,9 @@ jobs:
 
           # LuCI主题:
           cat >> .config <<EOF
-          CONFIG_PACKAGE_luci-theme-argon=y
+          # CONFIG_PACKAGE_luci-theme-argon=y
           CONFIG_PACKAGE_luci-theme-netgear=y
-          CONFIG_PACKAGE_luci-theme-atmaterial=y
-          CONFIG_PACKAGE_lluci-theme-rosy=y
+          CONFIG_PACKAGE_luci-theme-rosy=y
           
           EOF
 
