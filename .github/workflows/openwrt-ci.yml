@@ -12,9 +12,9 @@ name: OpenWrt-CI
 on:
   schedule:
     - cron: 0 20 * * *
-  push:
-    branches: 
-      - master
+  # push:
+  #   branches: 
+  #     - master
 
 jobs:
   build:
@@ -179,8 +179,6 @@ jobs:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-theme-argon=y
           CONFIG_PACKAGE_luci-theme-netgear=y
-          CONFIG_PACKAGE_luci-theme-argon-mc=y
-          # CONFIG_PACKAGE_luci-theme-bootstrap is not set
           EOF
 
           # 常用软件包:
@@ -201,7 +199,6 @@ jobs:
           # CONFIG_PACKAGE_luci-app-ipsec-vpnd is not set
           # CONFIG_PACKAGE_luci-app-pptp-server is not set
           # CONFIG_PACKAGE_luci-app-samba is not set
-          # CONFIG_PACKAGE_luci-app-samba4 is not set
           # CONFIG_PACKAGE_luci-app-vsftpd is not set
           # CONFIG_PACKAGE_luci-app-ddns is not set
           EOF
